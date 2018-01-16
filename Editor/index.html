@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style type="text/css">
+	html{
+		height: 100%;
+		width: 100%;
+		font-size: 15px;
+		background: #f3f3f3;
+	}
+	body{
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	.s-e-editor{
+		display: inline-block;
+		
+	}
+	.s-e-editor pre{
+		display: block;
+    	padding: 9.5px;
+    	width: 90%;
+    	margin: 10px 0px 10px 5%;
+    	font-size: 13px;
+    	line-height: 1.42857143;
+    	color: #333;
+    	word-break: break-all;
+    	word-wrap: break-word;
+    	background-color: #f5f5f5;
+    	border: 1px solid #ccc;
+    	border-radius: 4px;
+	}
+	.s-e-editor ol{
+		padding-left: 40px;
+	}
+	.s-e-editor ul{
+    	display: block;
+    	list-style-type: disc;
+    	-webkit-margin-before: 0em;
+    	-webkit-margin-after: 0em;
+    	-webkit-margin-start: 0px;
+    	-webkit-margin-end: 0px;
+    	-webkit-padding-start: 0px;
+	}
+	.s-e-editor img{
+		max-width: 500px;
+	}
+	.s-e-editor p{
+		margin: 0px;
+	}
+	.s-e-editor button{
+		height: 30px;
+		width: 50px;
+	}	
+	.s-e-editor button:hover{
+		cursor:pointer;
+		color: rgba(0,0,0,0.5);
+	}
+
+	footer{
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 150px;
+		vertical-align: middle;
+		margin-top: 100px;
+		position: relative;
+		color: #fff;
+		background: rgba(0,0,0,0.5);
+	}
+	#s-e-menu i:hover{
+		cursor:pointer;
+		color: rgba(0,0,0,0.5);
+	}
+	
+	.s-e-active{
+		color: blue;
+	}
+	.s-e-active [sign=list1]{
+		color: blue;
+	}
+	.s-e-head-h1-active [sign=h1]{
+		color: blue;
+	}
+	.s-e-head-h2-active [sign=h2]{
+		color: blue;
+	}
+	.s-e-head-h3-active [sign=h3]{
+		color: blue;
+	}
+	.s-e-head-h4-active [sign=h4]{
+		color: blue;
+	}
+	.s-e-head-h5-active [sign=h5]{
+		color: blue;
+	}
+	.s-e-head-p-active [sign=p]{
+		color: blue;
+	}
+	.s-e-jstf-left-active [pos=left]{
+		color: blue;
+	}
+	.s-e-jstf-right-active [pos=right]{
+		color: blue;
+	}
+	.s-e-jstf-center-active [pos=center]{
+		color: blue;
+	}
+	.s-e-download button{
+		width: 50px;
+	}
+	.s-e-list{
+		width: 50px;
+	}
+	.s-e-menu{
+		display: inline-block;
+		padding: 0 0;
+		text-align: left;
+		box-sizing:border-box;
+		background: #f1f1f1;
+		border: 2px solid rgba(0, 0, 0,0.1);
+        border-radius: 10px;
+        box-shadow:1px 1px  10px rgba(0,0,0,0.1);
+	}
+	.s-e-menu  div{
+		display: inline-block;
+		margin: 5px;	
+	}
+	.s-e-menu  button{
+		display: inline-block;
+		background: transparent;
+		border: none;	
+	}
+	.s-e-menuList{
+		box-sizing:border-box;
+		width: 50px;
+		height: 20px;
+		line-height:20px;
+		display: inline-block;		
+		margin: 0;
+	}
+	.s-e-menuList li{
+		display: inline-block;
+	}
+	.wrapper{
+		width: 700px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	.information{
+		display: inline-block;
+		width: 50px;
+		margin: 10px 30px;
+		font-size: 12px;
+
+	}
+	.information i{
+		width: 50px;
+	}
+	.information i:hover{
+		cursor:pointer;
+		color: rgba(0,0,0,0.5);
+	}
+	.introduceWrapper a{
+		width: 50px;
+		color: #000;
+		text-decoration: none;
+	}
+	.s-e-editor{
+		width: 100%;
+	}
+	.s-e-container{
+		box-sizing:border-box;
+		display: inline-block;
+		overflow-y: scroll;
+		overflow-x:hidden;
+		text-align: left;
+		min-height: 350px;
+		width: 100%;
+		margin: 0 auto;
+		border: 2px solid rgba(0, 0, 0,0.1);
+        border-radius: 10px;
+        box-shadow:1px 1px  10px rgba(0,0,0,0.1) ;
+
+	}
+	.z-e-container{
+		height: 550px;
+		margin: 20px auto;
+		background: #fff;
+	}
+	.z-e-menu{
+		position: fixed;
+		background: #fff;
+		left: 0px;
+		top: 0px;
+	}
+
+	.s-e-container code {
+    	 display: block;
+    	 background-color: #f1f1f1;
+    	 border-radius: 3px;
+    	 padding: 3px 5px;
+   		 margin: 0 3px;
+   	}
+	.s-e-container p, .s-e-container h1, .s-e-container h2,
+	.s-e-container h3, .s-e-container h4, .s-e-container h5,
+	.s-e-container table 
+	{
+    	margin: 10px 0;
+    	line-height: 1.5;
+	}
+	.s-e-head{
+		display: inline-block;
+
+	}
+	.s-e-head button:hover{
+		cursor:pointer;
+		color: rgba(0,0,0,0.5);
+	}
+	.shu-1x{
+		font-size: 25px;
+	}
+	.shu-2x{
+		font-size: 20px;
+	}
+	.shu-3x{
+		font-size: 15px;
+	}
+	.shu-4x{
+		font-size: 10px;
+	}
+	.shu-5x{
+		font-size: 5px;
+	}
+	.s-e-justify{
+		display: inline-block;
+		width: 140px;
+	}
+	.s-e-file{
+		display: line-block;
+	}
+	.s-e-file button{
+		width: 50px;
+	}
+	.s-e-file input[type=file]{
+		width: 70px;
+		display: inline-block;
+	}
+	
+	.s-e-container blockquote{
+		display: block;
+    	border-left: 8px solid #d0e5f2;
+    	padding: 5px 10px;
+    	margin: 10px 0;
+    	line-height: 1.4;
+    	font-size: 100%;
+    	background-color: #f1f1f1;
+	}
+	.introduceWrapper{
+		height: 180px;	
+		width:100%;
+		padding: 50px 0;
+		font-size: 50px;
+		background: #fff;
+	}
+	.introduceWrapper h3{
+		margin: 0;
+	}
+   	#introduce{
+   		
+   		font-size: 25px;
+   	}
+   	footer span{
+   		display: inline-block;
+   		margin: 50px auto 0 auto;
+   	}
+   	
+   
+	</style>
+	</head>
+	<body>
+		<div class="introduceWrapper">
+			<h3>ShuEditor</h3>
+			<p id="introduce">一款基于网页的富文本编辑器</p>
+			<span class="information">
+				<a href="https://github.com/skb7811455/Game"><i class="fa fa-github fa-2x"></i>Github</a>
+			</span>
+			<span class="information">
+				<a href="http://111.230.243.64/game.html"><i class="fa fa-folder-open fa-2x"></i>更多项目</a>
+			</span>
+			<span class="information">
+				<a href="https://github.com/skb7811455/Game"><i class="fa fa-weixin fa-2x"></i>联系方式</a>
+			</span>
+		</div>
+		<div class="wrapper">
+			<div class="s-e-editor" id="editor">
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="s-e-editor" id="editor1">
+			</div>
+		</div>
+		
+		
+	</body>
+	<script src="dist/bundle.js"></script>
+    <script type="text/javascript">
+       console.log(window.Editor)
+    	var Editor=new Editor("#editor","z-e-menu","z-e-container");
+		var Editor1=new Editor1("#editor1",null,"z-e-container");
+		Editor.init();
+		Editor1.init();
+    </script>
+</html>
+
