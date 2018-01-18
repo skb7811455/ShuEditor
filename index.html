@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="src/css/font-awesome.min.css">
+	<link rel="stylesheet" href="src/css/shuEditor.css">
+	</head>
+	<body>
+		<div class="introduceWrapper">
+			<h3>ShuEditor</h3>
+			<p id="introduce">一款基于网页的富文本编辑器</p>
+			<span class="information">
+				<a href="https://github.com/skb7811455/Game"><i class="fa fa-github fa-2x"></i>Github</a>
+			</span>
+			<span class="information">
+				<a href="http://111.230.243.64/game.html"><i class="fa fa-folder-open fa-2x"></i>更多项目</a>
+			</span>
+			<span class="information">
+				<a href="https://github.com/skb7811455/Game"><i class="fa fa-weixin fa-2x"></i>联系方式</a>
+			</span>
+		</div>
+		<div class="wrapper">
+			<div class="s-e-editor" id="editor">
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="s-e-editor" id="editor1">
+			</div>
+		</div>		
+	</body>
+	<script src="src/dist/bundle.js"></script>
+    <script type="text/javascript">
+    	var Editor=new Editor("#editor","z-e-menu","z-e-container");
+		var Editor1=new Editor1("#editor1",null,"z-e-container");
+		Editor.init();
+		Editor1.init();
+    </script>
+</html>
+
